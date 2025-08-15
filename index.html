@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NiceToPlay — Indie Game Studio</title>
+  <meta name="description" content="NiceToPlay is an indie studio building mobile games with Unreal Engine 5." />
+  <meta name="theme-color" content="#0b62ff" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="NiceToPlay — Indie Game Studio" />
+  <meta property="og:description" content="Indie mobile games built with Unreal Engine 5." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nicetoplay.com/" />
+  <meta property="og:image" content="https://nicetoplay.com/cover.png" />
+  <style>
+    :root{
+      --bg:#0a0b10; --fg:#e9ebf2; --muted:#b9bfd3; --card:#0f1220; --acc:#0b62ff; --acc2:#3dd3ff;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;background:linear-gradient(180deg,#0a0b10 0%, #0c0f1e 100%);color:var(--fg);line-height:1.6}
+    a{color:var(--acc);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:rgba(10,11,16,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
+    .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:var(--shadow)}
+    .nav a{color:var(--fg);opacity:.9}
+    .nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:white;font-weight:600;border:0;box-shadow:var(--shadow)}
+    .btn:hover{filter:brightness(1.05)}
+    /* Hero */
+    .hero{padding:80px 0 48px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(59,130,246,.18);color:#dbe7ff;font-size:.85rem;border:1px solid rgba(59,130,246,.35)}
+    h1{font-size:clamp(2.2rem,3.8vw,3.3rem);line-height:1.1;margin:14px 0}
+    .lead{color:var(--muted);font-size:1.05rem}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .panel{display:grid;gap:12px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:.85rem;color:var(--muted)}
+    .hero-art{aspect-ratio:16/10;border-radius:20px;background:
+      radial-gradient(1200px 600px at -10% -20%, rgba(11,98,255,.28), transparent 60%),
+      radial-gradient(900px 700px at 120% 120%, rgba(61,211,255,.25), transparent 60%),
+      linear-gradient(180deg,#0b0e1a,#0a0b10);
+      border:1px solid rgba(255,255,255,.07);box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .spark{position:absolute;inset:auto 10% 12% auto;width:180px;height:180px;background:radial-gradient(circle,rgba(255,255,255,.35),transparent 60%);filter:blur(18px);opacity:.5;transform:rotate(25deg)}
+    /* Sections */
+    section{padding:56px 0}
+    h2{font-size:1.8rem;margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .game{display:flex;flex-direction:column;gap:10px}
+    .thumb{aspect-ratio:16/9;border-radius:16px;background:linear-gradient(135deg,#1c223a,#131729);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-weight:700;color:#d5dcff}
+    .list{display:grid;gap:10px}
+    footer{padding:34px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);margin-top:24px}
+    .links{display:flex;flex-wrap:wrap;gap:14px}
+    .tiny{font-size:.92rem}
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .nav ul{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="wrap nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <span class="logo" aria-hidden="true"></span>
+        <span>NiceToPlay</span>
+      </a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="/privacy-policy.html">Privacy</a></li>
+      </ul>
+      <!-- Optional CTA links -->
+      <a class="btn" href="#games" role="button" aria-label="View our games">Play Now</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge">Unreal Engine 5 • Mobile</span>
+        <h1>Playful experiences, crafted with care.</h1>
+        <p class="lead">We’re <strong>NiceToPlay</strong> — an indie studio creating games and apps for mobile devices.</p>
+        <div class="panel">
+          <div class="card">
+            <strong>What to expect:</strong>
+            <div class="list">
+              <span class="tag">Interactable gameplay</span>
+              <span class="tag">Fair monetization</span>
+              <span class="tag">Offline-friendly</span>
+              <span class="tag">Privacy-first</span>
+            </div>
+          </div>
+          <div class="card tiny">
+            Looking for the legal docs? See
+            <a href="/privacy-policy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-art" role="img" aria-label="Stylized abstract game artwork background">
+        <div class="spark" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="wrap">
+      <h2>About the Studio</h2>
+      <p class="muted">
+        We create games that are deeply interactive and engaging — from relaxing puzzles to satisfying, tactile experiences that keep players hooked.
+      </p>
+      <div class="grid grid-3">
+        <div class="card">
+          <strong>Small & Agile</strong>
+          <p class="muted">Fast iterations, quick updates, and direct attention to feedback.</p>
+        </div>
+        <div class="card">
+          <strong>Player-Friendly</strong>
+          <p class="muted">Gameplay comes first.</p>
+        </div>
+        <div class="card">
+          <strong>Tech</strong>
+          <p class="muted">Built with Unreal Engine 5, targeting modern Android devices, optimized for smooth performance and efficient resource use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games -->
+  <section id="games">
+    <div class="wrap">
+      <h2>Games</h2>
+      <p class="muted">A quick look at what we’re crafting. Store links can be added once titles are live on Google Play.</p>
+      <div class="grid grid-3">
+        <article class="game card">
+          <div class="thumb">App #1</div>
+          <div>
+            <strong>Gun Sounds App</strong>
+            <p class="muted tiny">Casual app about weapon sounds and specifications.</p>
+            <!-- Example placeholder link -->
+            <!-- <a href="#" aria-label="Open on Google Play">Google Play ↗</a> -->
+          </div>
+        </article>
+        <article class="game card">
+          <div class="thumb">App #2</div>
+          <div>
+            <strong>3D Gun Gallery</strong>
+            <p class="muted tiny">A hyper-detailed 3D weapon showcase with satisfying ASMR sounds.</p>
+          </div>
+        </article>
+        <article class="game card">
+          <div class="thumb">Game #3</div>
+          <div>
+            <strong>Wizard of Words</strong>
+            <p class="muted tiny">Find hidden words in a whimsical, magical world of puzzles.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional: Support (you may remove if you don't want to show contact on site) -->
+  <!--
+  <section id="support">
+    <div class="wrap">
+      <h2>Support</h2>
+      <p class="muted">For support inquiries, reach us at <a href="mailto:support@yourstudio.com">support@yourstudio.com</a>.</p>
+    </div>
+  </section>
+  -->
+
+  <footer>
+    <div class="wrap">
+      <div class="links tiny">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+      </div>
+      <p class="tiny">© <span id="y"></span> NiceToPlay. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
